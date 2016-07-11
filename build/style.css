@@ -1,0 +1,32 @@
+head {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.inputContainer {
+  position: fixed;
+  width: 75px;
+  line-height: 7px;
+}
+
+.inputBox {
+  width: 47px;
+  font-size: 7px;
+}
+
+.inputButton {
+  width: 50px;
+  font-size: 7px;
+}

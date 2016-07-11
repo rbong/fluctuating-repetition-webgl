@@ -1,0 +1,23 @@
+{
+  "name": "Fluctuating_Repitition",
+  "version": "0.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "lint": "eslint src",
+    "test": "echo No tests found.",
+    "validate": "npm ls",
+    "start": "webpack-dev-server --content-base build/",
+    "build": "webpack -p src/index.js build/assets/bundle.js"
+  },
+  "author": "rbong",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^2.6.0",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "twgl.js": "^1.7.2",
+    "webpack": "^1.13.1"
+  }
+}
