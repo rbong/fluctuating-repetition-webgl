@@ -2,7 +2,7 @@
 
 [Concept](http://koaning.io/fluctuating-repetition.html).
 
-[Recent build](http://fluctuating-repitition.bitballoon.com/).
+[Recent build](http://fluctuating-repitition.surge.sh/).
 
 # Dependencies
 
@@ -22,4 +22,10 @@ http://localhost:8080
 
 ```
 npm run build
+```
+
+# Deploying
+
+```
+npm run deploy
 ```
