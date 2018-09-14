@@ -8,7 +8,8 @@
     "test": "echo No tests found.",
     "validate": "npm ls",
     "start": "webpack-dev-server --content-base build/",
-    "build": "webpack -p src/index.js build/assets/bundle.js"
+    "build": "webpack -p src/index.js build/assets/bundle.js",
+    "deploy": "npm run build && surge ./build fluctuating-repitition.surge.sh"
   },
   "author": "rbong",
   "license": "MIT",
@@ -17,6 +18,7 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
+    "surge": "^0.20.1",
     "twgl.js": "^1.7.2",
     "webpack": "^1.13.1"
   }
