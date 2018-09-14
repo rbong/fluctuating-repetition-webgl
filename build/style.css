@@ -10,23 +10,36 @@ body {
 }
 
 canvas {
-  position: absolute;
   width: 100%;
   height: 100%;
 }
 
 .inputContainer {
-  position: fixed;
-  width: 75px;
-  line-height: 7px;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 12px;
+  font-family: Roboto, Arial;
+}
+
+.inputLabel {
+  margin-top: 12px;
+  margin-bottom: 5px;
 }
 
 .inputBox {
   width: 47px;
-  font-size: 7px;
+  font-size: 12px;
+}
+
+.inputArea {
+  width: 300px;
+  height: 200px;
+  font-size: 12px;
 }
 
 .inputButton {
-  width: 50px;
-  font-size: 7px;
+  margin-top: 12px;
+  font-size: 12px;
 }

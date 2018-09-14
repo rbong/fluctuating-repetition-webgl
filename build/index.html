@@ -2,23 +2,47 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Fluctuating Repitition</title>
   </head>
   <body>
     <canvas id="root"></canvas>
     <div class="inputContainer">
+        <div class="inputLabel">
+          <p>
+            You can customize the function or simply randomize the multipliers used below.
+            <br />
+            The function is rendered by simply rendering 60,000 dots on a canvas.
+            <br />
+            The position of the dots is determined using a non-linear equation.
+          </p>
+          <p>
+            A great number of effects can be achieved simply by changing one multiplier.
+            <br />
+            In fact, changing one multiplier over time is how the function is animated.
+            <br />
+            Different effects can also be achieved by using the Math.sin/Math.cos functions.
+          </p>
+          <p>
+            <a href="https://github.com/rbong/fluctuating-repitition-webgl">Source</a>
+          </p>
+        </div>
+        <div class="inputLabel"><b>Multipliers:</b></div>
         <input id="inputA" class="inputBox"></input>
         <input id="inputB" class="inputBox"></input>
         <input id="inputC" class="inputBox"></input>
         <input id="inputD" class="inputBox"></input>
         <input id="inputE" class="inputBox"></input>
         <input id="inputF" class="inputBox"></input>
-        <textarea id="inputFuncF" class="inputBox"></textarea>
-        <textarea id="inputFuncG" class="inputBox"></textarea>
-        <textarea id="inputFuncH" class="inputBox"></textarea>
-        <button id="randomButton" class="inputButton">randomize</button>
-        <button id="setButton" class="inputButton">set</button>
+        <div class="inputLabel"><b>Functions:</b></div>
+        <textarea id="inputFuncF" class="inputArea"></textarea>
+        <textarea id="inputFuncG" class="inputArea"></textarea>
+        <textarea id="inputFuncH" class="inputArea"></textarea>
+        <div>
+          <button id="randomButton" class="inputButton">randomize</button>
+          <button id="setButton" class="inputButton">set</button>
+        </div>
     </div>
     <script src="assets/bundle.js"></script>
   </body>

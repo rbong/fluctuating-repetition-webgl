@@ -36,7 +36,7 @@ var bufferInfo = twgl.createBufferInfoFromArrays(
 gl.useProgram(programInfo.program);
 twgl.setBuffersAndAttributes(gl, programInfo, bufferInfo);
 
-var mults = [1.34, 0.37, 1.75, 1.33, 0.15, 0.81];
+var mults = [0.46, 0.92, 1.05, 1.3, 1.7, 0.62];
 
 function convertFunc(sFunc)
 {
@@ -45,9 +45,35 @@ function convertFunc(sFunc)
 
 var sFuncs = (
   [
-    'function (n, t) {\n  n[5] = n[5]+Math.PI;\n}',
-    'function (x, y, z, x1, y1) {\n  return z + 0.1;\n}',
-    'function (v, w) {\n  return (Math.sin(v[0] * w[0]) - Math.sin(v[1] * w[1]) - Math.cos(v[2] * w[2]));\n}',
+    '/*\n' +
+    ' * Increment multipliers on every loop.\n' +
+    ' * Param n: the array of multipliers.\n' +
+    ' * Param t: the time delta.\n' +
+    ' */\n' +
+    'function (n, t) {\n' +
+    '  n[5] = n[5] + t/320;\n' +
+    '}',
+    '/*\n' +
+    ' * Get the next z coordinate.\n' +
+    ' * Params x, y, z: the current coords.\n' +
+    ' * Params x1, y1: the next x/y coords.\n' +
+    ' */\n' +
+    'function (x, y, z, x1, y1) {\n' +
+    '  return z + 0.1;\n' +
+    '}',
+    '/*\n' +
+    ' * Gets the next x or y coord.\n' +
+    ' * Uses even (x) or odd (y) multipliers.\n' +
+    ' * Param x, y, z: the current coords.\n' +
+    ' * Param n: an array of 3 multipliers.\n' +
+    ' */\n' +
+    'function (x, y, z, n) {\n' +
+    '  return (\n' +
+    '    Math.sin(x * n[0]) -\n' +
+    '    Math.sin(y * n[1]) -\n' +
+    '    Math.cos(z * n[2])\n' +
+    '  );\n' +
+    '}'
   ]
 );
 var funcs = sFuncs.map(convertFunc);
@@ -173,8 +199,8 @@ function render(now)
       switch (i % 2)
       {
         case 0:
-          var x1 = funcs[2]([x, y, z], [mults[0], mults[1], mults[2]]);
-          var y1 = funcs[2]([x, y, z], [mults[3], mults[4], mults[5]]);
+          var x1 = funcs[2](x, y, z, [mults[0], mults[1], mults[2]]);
+          var y1 = funcs[2](x, y, z, [mults[3], mults[4], mults[5]]);
           z = funcs[1](x, y, z, x1, y1);
           x = x1;
           y = y1;
