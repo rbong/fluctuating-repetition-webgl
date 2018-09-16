@@ -1,8 +1,8 @@
-# Fluctuating Repitition
+# Fluctuating Repetition
 
 [Concept](http://koaning.io/fluctuating-repetition.html).
 
-[Recent build](http://fluctuating-repitition.surge.sh/).
+[Recent build](http://fluctuating-repetition.surge.sh/).
 
 # Dependencies
 

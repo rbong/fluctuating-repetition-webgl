@@ -1,5 +1,5 @@
 {
-  "name": "Fluctuating_Repitition",
+  "name": "Fluctuating_Repetition",
   "version": "0.0.0",
   "description": "",
   "private": true,
@@ -9,7 +9,7 @@
     "validate": "npm ls",
     "start": "webpack-dev-server --content-base build/",
     "build": "webpack -p src/index.js build/assets/bundle.js",
-    "deploy": "npm run build && surge ./build fluctuating-repitition.surge.sh"
+    "deploy": "npm run build && surge ./build fluctuating-repetition.surge.sh"
   },
   "author": "rbong",
   "license": "MIT",
