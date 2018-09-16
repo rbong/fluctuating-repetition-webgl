@@ -10,7 +10,7 @@ var vs = '\n\
 
 var fs = '\n\
   void main() {\n\
-    gl_FragColor = vec4(0, 0, 0, 1); // green\n\
+    gl_FragColor = vec4(0, 0, 0, 0.2); // grey\n\
   }\n\
 ';
 
@@ -25,7 +25,7 @@ gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
 
 var programInfo = twgl.createProgramInfo(gl, [vs, fs]);
 
-var positions = new Float32Array(60000);
+var positions = new Float32Array(250000);
 var bufferInfo = twgl.createBufferInfoFromArrays(
   gl,
   {
@@ -51,7 +51,7 @@ var sFuncs = (
     ' * Param t: the time delta.\n' +
     ' */\n' +
     'function (n, t) {\n' +
-    '  n[5] = n[5] + t/320;\n' +
+    '  n[5] = n[5] + t/(Math.PI * 100);\n' +
     '}',
     '/*\n' +
     ' * Get the next z coordinate.\n' +
@@ -169,7 +169,7 @@ function setAll()
 
 function getRand()
 {
-  return (Math.random() * Math.PI).toFixed(2) * 1;
+  return (Math.random() * 2).toFixed(2) * 1;
 }
 
 function handleRandomClick()
@@ -204,9 +204,9 @@ function render(now)
           z = funcs[1](x, y, z, x1, y1);
           x = x1;
           y = y1;
-          return x / 5;
+          return x / 3;
         case 1:
-          return y / 5;
+          return y / 3;
       }
     }
   );
